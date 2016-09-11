@@ -143,7 +143,7 @@ class TweetDeleter():
         config = configparser.SafeConfigParser()
         try:
             with open(self.config_path) as h:
-                config.read_file(h)
+                config.read(h)
         except IOError:
             return fail_val
         else:
@@ -195,7 +195,7 @@ class TweetDeleter():
         config = configparser.SafeConfigParser()
         try:
             with open(self.config_path) as h:
-                config.read_file(h)
+                config.read("settings.ini")
         except IOError:
             print("Please specify a valid config file.")
         else:
